@@ -1,0 +1,78 @@
+const express = require('express');
+const router = express.Router();
+const Post = require('../models/Post.js');
+const mongoose = require('mongoose');
+
+// GET ALL POSTS
+router.get('/',async (req,res)=>{
+    try
+    {
+        const posts = await Post.find();
+        res.json(posts);
+    }
+    catch (error)
+    {
+        res.json({message:error})
+    }
+});
+
+// SUBMIT A POST
+router.post('/',async (req,res)=>{
+    const post = new Post({
+        title:req.body.todo
+    });
+    try
+    {
+        const savedPost = await post.save();
+        res.json(savedPost);
+    }
+    catch (error)
+    {
+        res.json({message:error});
+    }
+});
+
+// GET A SINGLE POST BY ID
+router.get('/:postId', async (req,res) => {
+    try
+    {
+        const post = await Post.findById(req.params.postId);
+        res.json(post);
+    }
+    catch(error)
+    {
+        res.json({message:error})
+    }
+});
+
+// DELETE POST
+router.delete('/:postId', async (req,res) => {
+    let _id  = mongoose.Types.ObjectId(req.params.postId);
+        try
+        {
+            const removedPost = await Post.remove({_id});
+            res.json(removedPost);
+        }
+        catch (error)
+        {
+            res.json({message:error});
+        }
+});
+
+//UPDATE a POST
+router.patch('/',async (req,res) => {
+    try {
+
+      const updatedPost = await  Post.update(
+          {_id:req.body._id},
+          {$set:{"title":req.body.title}}
+          );
+
+      res.json(updatedPost);
+    }
+    catch (error) {
+        res.json({message:error})
+    }
+});
+
+module.exports = router;

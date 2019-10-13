@@ -23,7 +23,7 @@ Last step is that opening `terminal`. Type `npm start`. When the application sta
 you'll see `MongoDB connection is successful. Connection is opened.
 ` message on `terminal`.
 
-## Test Api
+## Unit Test 
 To ensure api methods works correctly type `npm test` on terminal. Test will works with fake data which declared primitively at the begining of file. Test result should be like following document
 
 ![Image of Test](https://github.com/Timosis/TodoAppRestApi/blob/master/TestResult.JPG)

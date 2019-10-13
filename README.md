@@ -24,8 +24,9 @@ you'll see `MongoDB connection is successful. Connection is opened.
 ` message on `terminal`.
 
 ## Unit Test 
-`Mocha` and `Chai` javascript libraries are used for unit test.
-To testing api methods type `npm test` on terminal. Test will works with fake data which declared primitively at the begining of file. Test result should be like following document
+`Mocha` and `Chai` javascript test framework and assertion library are used for unit test. You can look for details at following links. 
+https://mochajs.org/  - https://www.chaijs.com/
+For testing api methods type `npm test` on terminal. Test will works with fake data which declared primitively at the begining of file. Test result should be like following document
 
 ![Image of Test](https://github.com/Timosis/TodoAppRestApi/blob/master/TestResult.JPG)
 

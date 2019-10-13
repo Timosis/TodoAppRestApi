@@ -17,9 +17,14 @@ You will find a connect button to link for setting your connection string.
 Choosing a string connection method useful for this application.
 Copy connection string and change it in `app.js` file.
 
-![Image of Yaktocat](https://github.com/Timosis/TodoAppRestApi/blob/master/MongoDbConnection.JPG)
+![Image of Mongo](https://github.com/Timosis/TodoAppRestApi/blob/master/MongoDbConnection.JPG)
 
 Last step is that opening `terminal`. Type `npm start`. When the application starts if you connected database successfully
 you'll see `MongoDB connection is successful. Connection is opened.
 ` message on `terminal`.
+
+## Test Api
+To ensure api methods works correctly type `npm test` on terminal. Test will works with fake data which declared primitively at the begining of file. Test result should be like following document
+
+![Image of Test](https://github.com/Timosis/TodoAppRestApi/blob/master/TestResult.JPG)
 
